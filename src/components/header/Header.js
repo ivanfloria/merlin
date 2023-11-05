@@ -1,6 +1,8 @@
 
-import styled from "styled-components"
+import { Link } from "react-router-dom"
 import Title from "./Title"
+
+import styled from "styled-components"
 
 const Container = styled.header`
     width: 100%;
@@ -14,7 +16,9 @@ const Container = styled.header`
 const Header = () => {
     return(
         <Container>
-            <Title title='Podcaster' />
+            <Link to={'./'} title="Go to home">
+                <Title title='Podcaster' />
+            </Link>
         </Container>
     )
 }

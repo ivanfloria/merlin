@@ -37,7 +37,7 @@ const PodcastCard = ({img,author,name,id}) => {
     return(
         <Link to={`/podcast/${id}`}>
             <Container>
-                <img src={img} />
+                <img src={img} alt={name} />
                 <Title>
                     {name}
                 </Title>

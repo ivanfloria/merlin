@@ -32,6 +32,7 @@ const PodcastDetails = () => {
                     img={data[0].artworkUrl600}
                     author={data[0].artistName}
                     title={data[0].trackName}
+                    id={id}
                 />
                 <Routes>
                     <Route path="/" element={

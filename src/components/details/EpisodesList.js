@@ -40,8 +40,10 @@ const TitleSection = styled.div`
     font-size: 0.9rem;
 `
 const DateSection = styled.div`
+    font-size: 0.9rem;
 `
 const DurationSection = styled.div`
+    font-size: 0.9rem;
 `
 
 const MsToMin = (miliseconds) => {
@@ -52,6 +54,16 @@ const MsToMin = (miliseconds) => {
     let seconds = (miliseconds / 1000) % 60
 
     return(`${addZ(minute)}:${addZ(seconds)}`)
+}
+
+const fixDate = (date) => {
+    let temp = new Date(date)
+    let day = temp.getDate()
+    let month = temp.getMonth() + 1
+    let year = temp.getFullYear()
+    if (day < 10) day = '0' + day
+    if (month < 10) month = '0' + month
+    return (`${day}/${month}/${year}`)
 }
 
 const EpisodesList = ({data,id}) => {
@@ -73,7 +85,7 @@ const EpisodesList = ({data,id}) => {
                                     {item.trackName}
                                 </Link>
                             </TitleSection>
-                            <DateSection>{item.releaseData}</DateSection>
+                            <DateSection>{fixDate(item.releaseDate)}</DateSection>
                             <DurationSection>{MsToMin(item.trackTimeMillis)}</DurationSection>
                         </li>
                     )

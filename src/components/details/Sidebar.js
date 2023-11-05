@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom"
+
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -31,15 +33,17 @@ const TitleHolder = styled.div`
 `
 
 
-const Siderbar = ({img,author,title}) => {
+const Siderbar = ({img,author,title,id}) => {
     return(
         <Container>
-            <ImgHolder>
-                <img src={img} />
-            </ImgHolder>
-            <TitleHolder>
-                {title}<span>by {author}</span>
-            </TitleHolder>
+            <Link to={`/podcast/${id}`} title="Back to podcast">
+                <ImgHolder>
+                    <img src={img} alt={title} />
+                </ImgHolder>
+                <TitleHolder>
+                    {title}<span>by {author}</span>
+                </TitleHolder>
+            </Link>
         </Container>
     )
 }
