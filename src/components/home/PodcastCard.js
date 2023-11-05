@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom"
+
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -31,17 +33,19 @@ const Author = styled.div`
     font-size: 0.8rem;
 `
 
-const PodcastCard = ({img,author,name}) => {
+const PodcastCard = ({img,author,name,id}) => {
     return(
-        <Container>
-            <img src={img} />
-            <Title>
-                {name}
-            </Title>
-            <Author>
-                Author: {author}
-            </Author>
-        </Container>
+        <Link to={`/podcast/${id}`}>
+            <Container>
+                <img src={img} />
+                <Title>
+                    {name}
+                </Title>
+                <Author>
+                    Author: {author}
+                </Author>
+            </Container>
+        </Link>
     )
 }
 

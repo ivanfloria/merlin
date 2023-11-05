@@ -1,16 +1,16 @@
 
 import PodcastList from "./PodcastList"
 import PodcastDetails from "./PodcastDetails"
-import PodcastEpisode from "./PodcastEpisode"
 
-import styled from "styled-components"
+import { Route, Routes } from "react-router-dom"
 
 const Main = () => {
     return(
         <div>
-            <PodcastList />
-            <PodcastDetails />
-            <PodcastEpisode />
+            <Routes>
+                <Route path="/" element={<PodcastList />} />
+                <Route path="/podcast/:id/*" element={<PodcastDetails />} />
+            </Routes>
         </div>
     )
 }

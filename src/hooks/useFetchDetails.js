@@ -1,20 +1,18 @@
 
 import { useState, useEffect } from "react";
 
-const useFetch = () => {
-    const [data, setData] = useState([])
-    const [loading, setLoading] = useState(false)
+const useFetchDetails = (url,id) => {
+    const [data, setData] = useState()
+    const [loading, setLoading] = useState(true)
 
     const CallAPI = async () => {
-        setLoading(true)
-        const url = 'https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json'
         try {
             const resp = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
             const temp = await resp.json()
             let data = JSON.parse(temp.contents)
-            setData(data.feed.entry)
+            setData(data.results)
             setLoading(false)
-            localStorage.setItem('data', JSON.stringify(data.feed.entry))
+            localStorage.setItem(`${id}`, JSON.stringify(data.results))
         } catch (error) {
             console.log('Error:', error)
         }
@@ -23,16 +21,18 @@ const useFetch = () => {
     useEffect(() => {
         let day = 1000 * 60 * 60 * 24
         let actualDate = Date.now()
-        let getDate = localStorage.getItem('date')
+        let getDate = localStorage.getItem(`date${id}`)
 
         if (getDate) {
             if (actualDate - getDate > day) {
                 CallAPI();
             } else {
-                setData(JSON.parse(localStorage.getItem('data')))
+                let temp = JSON.parse(localStorage.getItem(`${id}`))
+                setData(temp)
+                setLoading(false)
             }
         } else {
-            localStorage.setItem('date', Date.now())
+            localStorage.setItem(`date${id}`, Date.now())
             CallAPI()
         }
     }, [])
@@ -40,4 +40,4 @@ const useFetch = () => {
     return { data, loading }
 }
 
-export default useFetch
+export default useFetchDetails

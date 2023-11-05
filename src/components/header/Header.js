@@ -1,7 +1,6 @@
 
 import styled from "styled-components"
 import Title from "./Title"
-import Loading from "./Loading"
 
 const Container = styled.header`
     width: 100%;
@@ -16,7 +15,6 @@ const Header = () => {
     return(
         <Container>
             <Title title='Podcaster' />
-            <Loading />
         </Container>
     )
 }

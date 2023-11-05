@@ -1,6 +1,6 @@
 
 
-const useSearch = (data, search) => {
+const useFilter = (data, search) => {
     let results = []
 
     if (!search) {
@@ -21,4 +21,4 @@ const useSearch = (data, search) => {
     return results
 }
 
-export default useSearch
+export default useFilter
