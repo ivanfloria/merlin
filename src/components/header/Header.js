@@ -16,7 +16,7 @@ const Container = styled.header`
 const Header = () => {
     return(
         <Container>
-            <Link to={'./'} title="Go to home">
+            <Link to={'/'} title="Go to home">
                 <Title title='Podcaster' />
             </Link>
         </Container>
