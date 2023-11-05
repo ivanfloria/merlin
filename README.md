@@ -6,14 +6,14 @@
 ## Info general:
 Me he ceñido a las indicaciones de la prueba a excepción de la ubicación del elemento de carga, que lo he situado en el centro de la página para mayor visibilidad.
 
-### React
-### Styled components
-### Webpack
-### Npm
-### React router dom
+> React
+> Styled components
+> Webpack
+> Npm
+> React router dom
 
 ## Pasos a seguir:
-$ git clone https://github.com/ivanfloria/merlin.git
-$ cd ../path/
-$ npm install
-$ npm start
+1. git clone https://github.com/ivanfloria/merlin.git
+2. cd ../path/
+3. npm install
+4. npm start
