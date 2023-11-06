@@ -3,22 +3,12 @@ import { Outlet, Route, Routes, useParams } from "react-router-dom"
 import useFetchDetails from "../../hooks/useFetchDetails"
 import Loading from "../Loading"
 
-import styled from "styled-components"
 import Siderbar from "../details/Sidebar"
 import EpisodesInfo from "../details/EpisodesInfo"
 import EpisodesList from "../details/EpisodesList"
 import EpisodesDescription from "../details/EpisodesDescription"
 
-const Container = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-`
-const InfoContainer = styled.div`
-    width: calc(100% - 350px);
-`
-
+import { Container, InfoContainer } from "../styles/PodcastDestailsStyles"
 const PodcastDetails = () => {
     const {id} = useParams()
     const url = `https://itunes.apple.com/lookup?id=${id}&entity=podcastEpisode&limit=100`

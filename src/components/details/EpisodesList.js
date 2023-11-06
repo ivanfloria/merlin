@@ -46,7 +46,7 @@ const DurationSection = styled.div`
     font-size: 0.9rem;
 `
 
-const MsToMin = (miliseconds) => {
+export const MsToMin = (miliseconds) => {
     const addZ = (n) => {
 	    return (n<10? '0':'') + n
     }
@@ -56,7 +56,7 @@ const MsToMin = (miliseconds) => {
     return(`${addZ(minute)}:${addZ(seconds)}`)
 }
 
-const fixDate = (date) => {
+export const fixDate = (date) => {
     let temp = new Date(date)
     let day = temp.getDate()
     let month = temp.getMonth() + 1

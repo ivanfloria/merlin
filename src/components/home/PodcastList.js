@@ -6,15 +6,7 @@ import PodcastCard from "./PodcastCard"
 import Tools from "./Tools"
 import Loading from "../Loading"
 
-import styled from "styled-components"
-
-const Container = styled.div`
-    width: 100%;
-`
-const Grid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-`
+import { Container, Grid } from "../styles/PodcastListStyles"
 
 const url = 'https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json'
 

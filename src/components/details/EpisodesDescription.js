@@ -2,27 +2,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import styled from "styled-components"
-
-const Container = styled.div`
-    width: 100%;
-    padding: 20px 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    box-sizing: border-box;
-    font-size: 1rem;
-`
-const TrackName = styled.div`
-    font-weight: bold;
-    font-size: 1.5rem;
-`
-const TrackInfo = styled.div`
-    font-style: italic;
-    color: #333;
-    margin: 20px 0;
-`
-const Audio = styled.audio`
-    width: 100%;
-`
+import { Container, TrackInfo, TrackName, Audio } from "../styles/EpisodesDescriptionStyles";
 
 const EpisodesDescription = ({id}) => {
     const [description,setDescription] = useState()

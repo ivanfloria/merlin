@@ -3,21 +3,10 @@ import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import Loading from "../Loading"
 
-import styled from "styled-components"
 import Siderbar from "../details/Sidebar"
 import EpisodesDescription from "../details/EpisodesDescription"
 
-
-
-const Container = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-`
-const InfoContainer = styled.div`
-    width: calc(100% - 350px);
-`
+import { Container, InfoContainer } from "../styles/PodcastEpisodeStyles"
 
 const PodcastEpisode = () => {
     const {id,idEpi} = useParams()
